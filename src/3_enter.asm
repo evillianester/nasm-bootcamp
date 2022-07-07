@@ -1,13 +1,12 @@
 section .data
+    usrMsg db 'Please, enter a number: '
+    lenUsrMsg equ $ - usrMsg
 
-usrMsg db 'Please, enter a number: '
-lenUsrMsg equ $ - usrMsg
-displayMsg db 'You have entered: '
-lenDisplayMsg equ $ - displayMsg
+    displayMsg db 'You have entered: '
+    lenDisplayMsg equ $ - displayMsg
 
 section .bss
-
-number resb 8
+    number resb 8
 
 section .text
     global _start
@@ -40,3 +39,4 @@ _start:
     mov eax, 1
     mov ebx, 0
     int 0x80
+
