@@ -1,11 +1,11 @@
 section .data
-   askMsg db 'Enter a digit: '
-   lenAskMsg equ $ - askMsg
+    askMsg db 'Enter a digit: '
+    lenAskMsg equ $ - askMsg
 
-    oddMsg db 'The digit is odd!', 0xA
+    oddMsg db 'The digit is odd!', 0xa
     lenOddMsg equ $ - oddMsg
 
-    evenMsg db 'The digit is even!', 0xA
+    evenMsg db 'The digit is even!', 0xa
     lenEvenMsg equ $ - evenMsg
 
 section .bss
@@ -48,5 +48,6 @@ even:
     
 exit:
     mov eax, 1
+    mov ebx, 0
     int 0x80
 
