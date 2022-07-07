@@ -1,5 +1,5 @@
 section .data
-    string db 'password', 0
+    string db 'password'
     len equ $ - string
 
 section .bss
@@ -30,5 +30,6 @@ l1:
     int 0x80
 
     mov eax, 1
+    mov ebx, 0
     int 0x80
 
