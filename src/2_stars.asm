@@ -1,3 +1,12 @@
+section .data
+    msg db 'Displaying 10 stars', 0xa
+    msg_len equ $ - msg
+    
+    stars times 10 db '*'
+
+    space db '', 0xa
+    space_len equ $ - space
+
 section .text
     global _start
 
@@ -23,10 +32,3 @@ _start:
     mov eax, 1
     int 0x80
 
-section .data
-
-msg db 'Displaying 10 stars', 0xa
-msg_len equ $ - msg
-stars times 10 db '*'
-space db '', 0xa
-space_len equ $ - space
