@@ -9,9 +9,9 @@ section .data
     lenMsg equ $ - msg
 
 section .bss
-    number1 resd 4
-    number2 resd 4
-    result resd 4
+    number1 resb 2
+    number2 resb 2
+    result resb 2
 
 section .text
     global _start
@@ -68,5 +68,6 @@ print_result:
 
 exit:
     mov eax, 1
+    mov ebx, 0
     int 0x80
 
