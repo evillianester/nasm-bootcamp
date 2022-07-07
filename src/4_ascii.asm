@@ -8,6 +8,7 @@ _start:
     call display
 
     mov eax, 1
+    mov ebx, 0
     int 0x80
 
 display:
@@ -22,11 +23,13 @@ l1:
     int 0x80
 
     pop ecx
+
     mov dx, [achar]
     sub dx, '0'
     inc dx
     add dx, '0'
     mov [achar], dx
+
     loop l1
     ret
 
