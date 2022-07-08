@@ -17,36 +17,42 @@ section .text
     global _start
 
 _start:
+    ; Ask for the fisrt number
     mov edx, lenAskMsg1
     mov ecx, askMsg1
     mov ebx, 1
     mov eax, 4
     int 0x80
 
+    ; Store the number
     mov edx, 4
     mov ecx, number1
     mov ebx, 2
     mov eax, 3
     int 0x80
 
+    ; Ask for the second number
     mov edx, lenAskMsg2
     mov ecx, askMsg2
     mov ebx, 1
     mov eax, 4
     int 0x80
 
+    ; Store the second number
     mov edx, 4
     mov ecx, number2
     mov ebx, 2
     mov eax, 3
     int 0x80
 
+    ; Display message
     mov edx, lenMsg
     mov ecx, msg
     mov ebx, 1
     mov eax, 4
     int 0x80
 
+    ; Check if the first number is greter than the second
     mov edx, [number1]
     cmp edx, [number2]
     jg one_is_greatest

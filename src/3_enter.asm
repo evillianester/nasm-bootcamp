@@ -12,24 +12,28 @@ section .text
     global _start
 
 _start:
+    ; Ask for a number
     mov edx, lenUsrMsg
     mov ecx, usrMsg
     mov ebx, 1
     mov eax, 4
     int 0x80
 
+    ; Store the number
     mov edx, 8
     mov ecx, number
     mov ebx, 2
     mov eax, 3
     int 0x80
 
+    ; Display message
     mov edx, lenDisplayMsg
     mov ecx, displayMsg
     mov ebx, 1
     mov eax, 4
     int 0x80
 
+    ; Display entered number
     mov edx, 8
     mov ecx, number
     mov ebx, 1

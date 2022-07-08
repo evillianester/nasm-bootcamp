@@ -15,12 +15,14 @@ section .text
     global _start
 
 _start:
+    ; Ask for a digit
     mov edx, lenAskMsg
     mov ecx, askMsg
     mov ebx, 1
     mov eax, 4
     int 0x80
 
+    ; Store the digit
     mov edx, 1
     mov ecx, digit
     mov ebx, 2
@@ -28,7 +30,8 @@ _start:
     int 0x80
 
     mov ax, [digit]
-
+    
+    ; Check if the digit is even or odd
     and ax, 1
     jz even
 
